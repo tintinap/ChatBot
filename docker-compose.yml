@@ -1,0 +1,15 @@
+version: '3.3'
+
+
+services: 
+    app:
+        container_name: JimmyBot
+        build:
+            context: ./docker/JimmyBot
+        ports:
+            - 8000:8000
+        volumes:
+            - ./:/app
+        command: python main.py
+        stdin_open: true
+        tty: true
